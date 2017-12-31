@@ -2,3 +2,8 @@
 1514721197 source:c:\users\andrásgergely\documents\cbprojects\szamrendszervaltas\main.cpp
 	<iostream>
 
+1514724483 source:c:\users\andrásgergely\documents\cbprojects\szamrendszervaltas\msg\main.cpp
+	<iostream>
+	<string.h>
+	<fstream>
+

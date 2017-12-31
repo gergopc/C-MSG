@@ -6,10 +6,11 @@
 #define STOPMESSAGE 0x14
 
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <fstream>
 
 using namespace std;
+ofstream fout("out.msg");
 int generateHash(int num)
 {
  int sum=0;
@@ -25,16 +26,29 @@ int generateHash(int num)
  }
  return sum;
 }
+void sendTEXT(string txt){
+char a[txt.length()+1];
+strcpy(a, txt.c_str());
+for(int i=0; i<txt.length(); i++){
+fout<<generateHash((int)a[i]);
+}
+}
 void send(string message, string username){
-int msg;
-fout<<generateHash(msg)<<endl;
+fout<<START;
+fout<<STARTUSERNAME;
+sendTEXT(username);
+fout<<STOPUSERNAME;
+fout<<STARTMESSAGE;
+sendTEXT(message);
+fout<<STOPMESSAGE;
+fout<<STOP<<endl;
 }
 int main(){
 string username;
 string message;
-cout<<"KI VAGY?"
+cout<<"KI VAGY?"<<endl;
 cin>>username;
-cout<<"UDV";
+cout<<"UDV"<<endl;
 while(1){
     cin>>message;
     send(message, username);
