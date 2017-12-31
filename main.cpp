@@ -25,9 +25,19 @@ int generateHash(int num)
  }
  return sum;
 }
+void send(string message, string username){
+int msg;
+fout<<generateHash(msg)<<endl;
+}
 int main(){
 string username;
-
-cout<<generateHash(sz);
+string message;
+cout<<"KI VAGY?"
+cin>>username;
+cout<<"UDV";
+while(1){
+    cin>>message;
+    send(message, username);
+}
 }
 
